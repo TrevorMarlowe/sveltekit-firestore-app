@@ -61,8 +61,8 @@
 
 <AuthCheck>
 	{#if $userData?.username}
-		<p class="">
-			You username is <span class="text-emerald-500 text-lg font-bold">@{$userData.username}</span>
+		<p class="text-lg">
+			Your username is <span class="text-emerald-500 text-xl font-bold">@{$userData.username}</span>
 		</p>
 		<p class="text-sm">(Usernames cannot be changed)</p>
 		<a class="btn btn-primary" href="/login/photo">Upload Profile Image</a>
