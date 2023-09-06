@@ -1,10 +1,10 @@
-import { collection, getDocs, limit, query, where } from 'firebase/firestore';
-import type { PageLoad } from './$types';
-import { db } from '$lib/firebase';
-import { error } from '@sveltejs/kit';
+import { collection, getDocs, limit, query, where } from "firebase/firestore";
+import type { PageLoad } from "./$types";
+import { db } from "$lib/firebase";
+import { error } from "@sveltejs/kit";
 
 export const load = (async ({ params }) => {
-
+    
   const collectionRef = collection(db, "users");
 
   const q = query(
@@ -17,7 +17,7 @@ export const load = (async ({ params }) => {
   const data = snapshot.docs[0]?.data();
 
   if (!exists) {
-    return error(404, 'That user does not exist!');
+    throw error(404, "that user does not exist!");
   }
 
   if (!data.published) {
@@ -30,5 +30,4 @@ export const load = (async ({ params }) => {
     bio: data.bio,
     links: data.links ?? [],
   };
-
 }) satisfies PageLoad;
