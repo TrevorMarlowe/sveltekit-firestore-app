@@ -82,7 +82,11 @@
         Edit your Profile
       </h1>
 
-      <SortableList list={$userData?.links} on:sort={sortList} let:item let:index>
+      <SortableList 
+        list={$userData?.links} 
+        on:sort={sortList} 
+        let:item 
+        let:index>
         <div class="group relative">
           <UserLink {...item} />
           <button
