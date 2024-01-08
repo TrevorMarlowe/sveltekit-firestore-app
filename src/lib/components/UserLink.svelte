@@ -1,6 +1,6 @@
 <script>
 	export let icon = 'default';
-	export let url = 'foo';
+	export let url = 'tipi';
 	export let title = 'some cool title';
 </script>
 
