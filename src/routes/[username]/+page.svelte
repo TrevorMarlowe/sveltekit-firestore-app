@@ -14,7 +14,7 @@
 
 <main class="prose text-center mx-auto mt-8">
 
-  <h1 class="text-7xl text-purple-500">
+  <h1 class="text-5xl text-purple-500 pb-3">
     @{data.username}
   </h1>
 
@@ -22,6 +22,7 @@
     src={data.photoURL ?? "/user.png"}
     alt="photoURL"
     width="256"
+    height="256"
     class="mx-auto"
   />
 
