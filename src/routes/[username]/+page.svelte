@@ -1,8 +1,16 @@
 <script lang="ts">
   import UserLink from "$lib/components/UserLink.svelte";
+  import { auth, user } from "$lib/firebase";
+  
+  import { GoogleAuthProvider, signInWithPopup, signOut } from "firebase/auth";
   import type { PageData } from './$types';
   
   export let data: PageData;
+
+  async function signOutSSR() {
+    const res = await fetch("/api/signin", { method: "DELETE" });
+    await signOut(auth);
+  }
 
 </script>
 
@@ -34,5 +42,11 @@
     </li>
     {/each}
   </ul>
+  
+  {#if $user}
+    <button class="btn btn-warning" on:click={signOutSSR}
+      >Sign out</button
+    >
+  {/if}
 
 </main>

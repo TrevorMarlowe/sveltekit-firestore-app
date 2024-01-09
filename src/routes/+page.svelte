@@ -14,7 +14,7 @@
 		<div class="hero-content text-center">
 			<div class="w-full">
 				<h1 class="text-7xl font-bold">tipi.media</h1>
-				<p class="py-6 text-2xl">Links to showcase your portfolio</p>
+				<p class="py-6 text-2xl">Your links to the world!</p>
 				{#if $userData?.username}
 					<a href="/{$userData.username}/edit" class="btn btn-primary">Edit Profile</a>
 				{:else}

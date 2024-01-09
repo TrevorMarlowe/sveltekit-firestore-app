@@ -154,5 +154,7 @@
           Add a Link
         </button>
       {/if}
+      <!-- add button to return to user profile page-->
+      <a href="/{$userData.username}" class="btn btn-outline btn-info block mx-auto my-4">Return to Profile</a>
     {/if}
   </main>
