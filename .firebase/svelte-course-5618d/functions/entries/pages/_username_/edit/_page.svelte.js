@@ -53,7 +53,7 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
     default: ({ item, index }) => {
       return `<div class="group relative">${validate_component(UserLink, "UserLink").$$render($$result, Object.assign({}, item), {}, {})} <button class="btn btn-xs btn-error invisible group-hover:visible transition-all absolute -right-6 bottom-10" data-svelte-h="svelte-1n5cbwc">Delete</button></div>`;
     }
-  })} ${`<button class="btn btn-outline btn-info block mx-auto my-4" data-svelte-h="svelte-1l5hg7j">Add a Link</button>`}  <a href="${"/" + escape($userData.username, true)}" class="btn btn-outline btn-info block mx-auto my-4">Return to Profile</a>` : ``}</main>`;
+  })} ${`<button class="btn btn-outline btn-info mx-auto my-4" data-svelte-h="svelte-dudlb6">Add a Link</button> <a href="${"/" + escape($userData.username, true)}" class="btn btn-primary">Return to Profile</a>`}` : ``}</main>`;
 });
 export {
   Page as default

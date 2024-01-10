@@ -41,11 +41,11 @@
       username, 
       photoURL: $user?.photoURL ?? null,
       published: true,
-      bio: 'I am the Walrus',
+      bio: 'Hello, welcome to my profile! Take a look at my links.',
       links: [
         {
           title: 'Test Link',
-          url: 'https://kung.foo',
+          url: 'https://svelte-course-5618d.web.app',
           icon: 'custom'
         }
       ]
