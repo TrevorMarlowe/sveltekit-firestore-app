@@ -149,12 +149,11 @@
       {:else}
         <button
           on:click={() => (showForm = true)}
-          class="btn btn-outline btn-info block mx-auto my-4"
+          class="btn btn-outline btn-info mx-auto my-4"
         >
           Add a Link
         </button>
+          <a href="/{$userData.username}" class="btn btn-primary">Return to Profile</a>
       {/if}
-      <!-- add button to return to user profile page-->
-      <a href="/{$userData.username}" class="btn btn-outline btn-info block mx-auto my-4">Return to Profile</a>
     {/if}
   </main>

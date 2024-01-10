@@ -2,6 +2,7 @@
     import type { PageData } from "./$types";
     import { page } from "$app/stores";
     import { enhance } from "$app/forms";
+    import { userData, user } from "$lib/firebase";
   
     export let data: PageData;
   </script>
@@ -23,7 +24,10 @@
           value={data.bio}
         />
       </div>
-      <button class="btn btn-primary my-5">Update Bio</button>
+      <button class="btn btn-outline btn-info block mx-auto my-4">Update Bio</button>
     </form>
+    {#if $userData?.username}
+      <a href="/{$userData.username}" class="btn btn-primary">Return to Profile</a>
+    {/if}
   </main>
   

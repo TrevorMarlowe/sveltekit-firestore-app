@@ -1,5 +1,5 @@
 import { v as validate_store, s as subscribe } from "../../../../chunks/utils.js";
-import { c as create_ssr_component, d as createEventDispatcher, b as each, a as add_attribute, v as validate_component } from "../../../../chunks/ssr.js";
+import { c as create_ssr_component, d as createEventDispatcher, b as each, a as add_attribute, v as validate_component, e as escape } from "../../../../chunks/ssr.js";
 import { p as page } from "../../../../chunks/stores.js";
 import { U as UserLink } from "../../../../chunks/UserLink.js";
 import { a as user, u as userData } from "../../../../chunks/firebase.js";
@@ -53,7 +53,7 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
     default: ({ item, index }) => {
       return `<div class="group relative">${validate_component(UserLink, "UserLink").$$render($$result, Object.assign({}, item), {}, {})} <button class="btn btn-xs btn-error invisible group-hover:visible transition-all absolute -right-6 bottom-10" data-svelte-h="svelte-1n5cbwc">Delete</button></div>`;
     }
-  })} ${`<button class="btn btn-outline btn-info block mx-auto my-4" data-svelte-h="svelte-1l5hg7j">Add a Link</button>`}` : ``}</main>`;
+  })} ${`<button class="btn btn-outline btn-info block mx-auto my-4" data-svelte-h="svelte-1l5hg7j">Add a Link</button>`}  <a href="${"/" + escape($userData.username, true)}" class="btn btn-outline btn-info block mx-auto my-4">Return to Profile</a>` : ``}</main>`;
 });
 export {
   Page as default

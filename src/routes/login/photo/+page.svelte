@@ -6,7 +6,7 @@
 
 		let previewURL: string;
 		let uploading = false;
-		// $: href = `/${userData?.username}/edit`
+		$: href = `/${$userData?.username}`
 
 		async function upload(e: any) {
 			uploading = true;
@@ -50,6 +50,6 @@
 		</div>
 	</form>
 
-	<!-- <a {href} class="btn btn-primary"> Finish </a> -->
+	<a {href} class="btn btn-primary"> Finish </a>
 	
 </AuthCheck>

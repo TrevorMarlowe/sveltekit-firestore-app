@@ -2,7 +2,7 @@
   import UserLink from "$lib/components/UserLink.svelte";
   import { auth, user } from "$lib/firebase";
   
-  import { GoogleAuthProvider, signInWithPopup, signOut } from "firebase/auth";
+  import { signOut } from "firebase/auth";
   import type { PageData } from './$types';
   
   export let data: PageData;
@@ -10,6 +10,7 @@
   async function signOutSSR() {
     const res = await fetch("/api/signin", { method: "DELETE" });
     await signOut(auth);
+    location.href = "/";
   }
 
 </script>
@@ -44,9 +45,13 @@
   </ul>
   
   {#if $user}
+  <div class="my-8">
+    <a href="/{data.username}/edit" class="btn btn-primary">Edit Profile</a>
+    <a href="/{data.username}/bio" class="btn btn-primary">Edit Bio</a>
     <button class="btn btn-warning" on:click={signOutSSR}
       >Sign out</button
     >
+  </div>
   {/if}
 
 </main>

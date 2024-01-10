@@ -37,6 +37,7 @@
     <button class="btn btn-warning" on:click={signOutSSR}
       >Sign out</button
     >
+    <a class="btn btn-primary" href="/login/username">Choose a username</a>
   {:else}
     <button class="btn btn-primary" on:click={signInWithGoogle}
       >Sign in with Google</button
